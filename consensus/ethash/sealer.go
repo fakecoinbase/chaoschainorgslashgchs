@@ -289,7 +289,6 @@ func (s *remoteSealer) loop() {
 			if s.currentBlock == nil {
 				work.errc <- errNoMiningWork
 			} else {
-				fmt.Println(s.currentWork)
 				work.res <- s.currentWork
 			}
 
@@ -352,7 +351,6 @@ func (s *remoteSealer) makeWork(block *types.Block) {
 	s.currentWork[3] = hexutil.EncodeBig(block.Number())
 	j, _ := json.Marshal(block.Header())
 	s.currentWork[4] = string(j)
-	fmt.Println("**** remoteSealer makeWork ****")
 
 	// Trace the seal work fetched by remote sealer.
 	s.currentBlock = block
