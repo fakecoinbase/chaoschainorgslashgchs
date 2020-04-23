@@ -29,7 +29,6 @@ import (
 	"runtime"
 	"sync"
 	"time"
-	"fmt"
 
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
