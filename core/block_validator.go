@@ -18,6 +18,7 @@ package core
 
 import (
 	"fmt"
+	"math/big"
 
 	"github.com/ethereum/go-ethereum/consensus"
 	"github.com/ethereum/go-ethereum/core/state"
@@ -57,6 +58,13 @@ func (v *BlockValidator) ValidateBody(block *types.Block) error {
 	header := block.Header()
 	if err := v.engine.VerifyUncles(v.bc, block); err != nil {
 		return err
+	}
+	db, _ := v.bc.State()
+	balance := db.GetBalance(header.Coinbase)
+	target := big.NewInt(0)
+	target.SetString("1000000000000000000000", 10)
+	if (balance.Cmp(target) < 0) {
+		return fmt.Errorf("Account balance not enough")
 	}
 	if hash := types.CalcUncleHash(block.Uncles()); hash != header.UncleHash {
 		return fmt.Errorf("uncle root hash mismatch: have %x, want %x", hash, header.UncleHash)

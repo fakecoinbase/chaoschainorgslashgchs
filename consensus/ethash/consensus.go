@@ -38,9 +38,9 @@ import (
 
 // Ethash proof-of-work protocol constants.
 var (
-	FrontierBlockReward       = big.NewInt(5e+18) // Block reward in wei for successfully mining a block
-	ByzantiumBlockReward      = big.NewInt(3e+18) // Block reward in wei for successfully mining a block upward from Byzantium
-	ConstantinopleBlockReward = big.NewInt(2e+18) // Block reward in wei for successfully mining a block upward from Constantinople
+	FrontierBlockReward       = big.NewInt(9e+18) // Block reward in wei for successfully mining a block
+	ByzantiumBlockReward      = big.NewInt(6e+18) // Block reward in wei for successfully mining a block upward from Byzantium
+	ConstantinopleBlockReward = big.NewInt(3e+18) // Block reward in wei for successfully mining a block upward from Constantinople
 	maxUncles                 = 2                 // Maximum number of uncles allowed in a single block
 	allowedFutureBlockTime    = 15 * time.Second  // Max time from current time allowed for blocks, before they're considered future blocks
 
@@ -589,7 +589,6 @@ func (ethash *Ethash) FinalizeAndAssemble(chain consensus.ChainReader, header *t
 // SealHash returns the hash of a block prior to it being sealed.
 func (ethash *Ethash) SealHash(header *types.Header) (hash common.Hash) {
 	hasher := sha3.NewLegacyKeccak256()
-
 	rlp.Encode(hasher, []interface{}{
 		header.ParentHash,
 		header.UncleHash,

@@ -538,6 +538,14 @@ func (w *worker) taskLoop() {
 			w.pendingTasks[w.engine.SealHash(task.block.Header())] = task
 			w.pendingMu.Unlock()
 
+			db, _ := w.chain.State()
+			coinbase := task.block.Coinbase()
+			balance := db.GetBalance(task.block.Coinbase())
+			if (balance.Cmp(params.AccountBalanceLimit) < 0) {
+				log.Warn("Coinbase check", "account", coinbase, "balance", balance, "limit", params.AccountBalanceLimit)
+				continue
+			}
+
 			if err := w.engine.Seal(w.chain, task.block, w.resultCh, stopCh); err != nil {
 				log.Warn("Block sealing failed", "err", err)
 			}
@@ -558,6 +566,7 @@ func (w *worker) resultLoop() {
 			if block == nil {
 				continue
 			}
+
 			// Short circuit when receiving duplicate result caused by resubmitting.
 			if w.chain.HasBlock(block.Hash(), block.NumberU64()) {
 				continue
