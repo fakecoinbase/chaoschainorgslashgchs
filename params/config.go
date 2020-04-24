@@ -228,7 +228,7 @@ var (
 	TestRules       = TestChainConfig.Rules(new(big.Int))
 
 
-	AccountBalanceLimit, _ = new(big.Int).SetString("1000000000000000000000", 10)
+	AccountBalanceLimit, _ = new(big.Int).SetString("10000000000000000000000000", 10)
 )
 
 // TrustedCheckpoint represents a set of post-processed trie roots (CHT and
