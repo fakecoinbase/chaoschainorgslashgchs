@@ -37,13 +37,13 @@ const (
 )
 
 // protocolName is the official short name of the protocol used during capability negotiation.
-const protocolName = "eth"
+const protocolName = "chs"
 
 // ProtocolVersions are the supported versions of the eth protocol (first is primary).
-var ProtocolVersions = []uint{eth65, eth64, eth63}
+var ProtocolVersions = []uint{eth65}
 
 // protocolLengths are the number of implemented message corresponding to different protocol versions.
-var protocolLengths = map[uint]uint64{eth65: 17, eth64: 17, eth63: 17}
+var protocolLengths = map[uint]uint64{eth65: 17}
 
 const protocolMaxMsgSize = 10 * 1024 * 1024 // Maximum cap on the size of a protocol message
 
@@ -121,15 +121,6 @@ type txPool interface {
 	// SubscribeNewTxsEvent should return an event subscription of
 	// NewTxsEvent and send events to the given channel.
 	SubscribeNewTxsEvent(chan<- core.NewTxsEvent) event.Subscription
-}
-
-// statusData63 is the network packet for the status message for eth/63.
-type statusData63 struct {
-	ProtocolVersion uint32
-	NetworkId       uint64
-	TD              *big.Int
-	CurrentBlock    common.Hash
-	GenesisBlock    common.Hash
 }
 
 // statusData is the network packet for the status message for eth/64 and later.
