@@ -505,7 +505,11 @@ func (srv *Server) setupLocalNode() error {
 	}
 	srv.nodedb = db
 	srv.localnode = enode.NewLocalNode(db, srv.PrivateKey)
-	srv.localnode.SetFallbackIP(net.IP{127, 0, 0, 1})
+	ip, _ := srv.NAT.ExternalIP()
+	if ip.To4() != nil {
+		ip = net.IP{127, 0, 0, 1}
+	}
+	srv.localnode.SetFallbackIP(ip)
 	// TODO: check conflicts
 	for _, p := range srv.Protocols {
 		for _, e := range p.Attributes {
