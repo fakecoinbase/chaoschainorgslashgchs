@@ -23,7 +23,7 @@ import "github.com/ethereum/go-ethereum/common"
 var MainnetBootnodes = []string{
 	// CHS Foundation Go Bootnodes
 	"enode://547d52fa8a7b96b9c30f36d67b1c4fc2175a279a57c8c17b2c90e53860c12d4f46d3c511585af2ef3b7c2943bcd4c683190ef3d4d05e413c0dcb4815d723d85f@[2408:8642:4ff:8:1::fb10]:30303",
-	"enode://dd8db78dcba892c104dba4e0ca9f2d34bd55158dd5ee998ea155964db3df6735dc2fe1952e7ade331de022f76d87f2634da46d1d893266b59f09bb597ad42d71@gchs.microcai.org:30303",
+	"enode://b2a13b6fb4b969354b264de1ba7e9d8c054b0c2330b4efb4df7024e615c070f782cb88568f4fb45f7783920b2826be0b761501bcc802d608f2a138df0c5c3b4c@gchs.microcai.org:30303",
 	"enode://03ae723ec5dd6dfdc926d7d73cf03ea8c9da0a0a2546a82b348af45cfc52235cc60a78c5699075644a7e98fd2a57232ccf0b034d070945baa1fbde9ba1a700c9@221.12.12.211:30301",
 }
 
