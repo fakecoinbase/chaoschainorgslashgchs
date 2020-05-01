@@ -155,7 +155,6 @@ func init() {
 		compileCommand,
 		disasmCommand,
 		runCommand,
-		stateTestCommand,
 	}
 	cli.CommandHelpTemplate = utils.OriginCommandHelpTemplate
 }
