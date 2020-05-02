@@ -2,7 +2,7 @@
 # with Go source code. If you know what GOPATH is then you probably
 # don't need to bother with make.
 
-.PHONY: gchs android ios gchs-cross evm all test clean
+.PHONY: gchs android ios gchs-cross evm all clean
 .PHONY: gchs-linux gchs-linux-386 gchs-linux-amd64 gchs-linux-mips64 gchs-linux-mips64le
 .PHONY: gchs-linux-arm gchs-linux-arm-5 gchs-linux-arm-6 gchs-linux-arm-7 gchs-linux-arm64
 .PHONY: gchs-darwin gchs-darwin-386 gchs-darwin-amd64
@@ -29,9 +29,6 @@ ios:
 	$(GORUN) build/ci.go xcode --local
 	@echo "Done building."
 	@echo "Import \"$(GOBIN)/gchs.framework\" to use the library."
-
-test: all
-	$(GORUN) build/ci.go test
 
 lint: ## Run linters.
 	$(GORUN) build/ci.go lint
