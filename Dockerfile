@@ -3,7 +3,7 @@ FROM golang:1.14-alpine as builder
 
 RUN apk add --no-cache make gcc musl-dev linux-headers git
 
-ADD . /gchs
+ADD . /gchs/
 RUN cd /gchs && make -j
 
 # Pull Gchs into a second stage deploy alpine container
