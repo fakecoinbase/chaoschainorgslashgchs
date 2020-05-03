@@ -22,6 +22,9 @@ import "github.com/ethereum/go-ethereum/common"
 // the main Ethereum network.
 var MainnetBootnodes = []string{
 	// CHS Foundation Go Bootnodes
+
+	"enode://06f4536f3956646c49e32d82ac31721669012324c4da28210795865d2cd821ffc88737c442c5458788e0ef9252df4c549226d69092df0d035e2d5abdac7723e5@49.235.119.123:30303",
+
 	"enode://464ecec2a80488b93c83592da368b38338dc530dff0d3f37e0d60f02ec41f8e29a1c09d592ad6352cf2f256ed2efe73e72e65401d253217056801b5fd708d3ee@[2408:8642:4ff:8:1::db7]:10101",
 	"enode://464ecec2a80488b93c83592da368b38338dc530dff0d3f37e0d60f02ec41f8e29a1c09d592ad6352cf2f256ed2efe73e72e65401d253217056801b5fd708d3ee@221.12.12.211:10101",
 
@@ -55,6 +58,8 @@ var GoerliBootnodes = []string{}
 // DiscoveryV5Bootnodes are the enode URLs of the P2P bootstrap nodes for the
 // experimental RLPx v5 topic-discovery network.
 var DiscoveryV5Bootnodes = []string{
+	"enode://06f4536f3956646c49e32d82ac31721669012324c4da28210795865d2cd821ffc88737c442c5458788e0ef9252df4c549226d69092df0d035e2d5abdac7723e5@49.235.119.123:30303",
+
 	"enode://464ecec2a80488b93c83592da368b38338dc530dff0d3f37e0d60f02ec41f8e29a1c09d592ad6352cf2f256ed2efe73e72e65401d253217056801b5fd708d3ee@[2408:8642:4ff:8:1::db7]:10101",
 	"enode://464ecec2a80488b93c83592da368b38338dc530dff0d3f37e0d60f02ec41f8e29a1c09d592ad6352cf2f256ed2efe73e72e65401d253217056801b5fd708d3ee@221.12.12.211:10101",
 
