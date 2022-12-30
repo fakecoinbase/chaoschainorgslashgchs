@@ -8,7 +8,7 @@ require (
 	github.com/Azure/go-autorest/autorest/adal v0.8.3 // indirect
 	github.com/VictoriaMetrics/fastcache v1.5.7
 	github.com/aristanetworks/goarista v0.0.0-20200423211322-0b5ff220aee9
-	github.com/aws/aws-sdk-go v1.30.14
+	github.com/aws/aws-sdk-go v1.33.0
 	github.com/btcsuite/btcd v0.20.1-beta
 	github.com/cespare/cp v1.1.1
 	github.com/cloudflare/cloudflare-go v0.11.6
